@@ -8,7 +8,7 @@ const DaiktasDetails = ({ daiktas }) => {
   const { user } = useAuthContext();
 
   const handleClick = async () => {
-    const response = await fetch(`${API_BASE}/api/daiktai` + daiktas._id, {
+    const response = await fetch(`${API_BASE}/api/daiktai${daiktas._id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${user.token}` },
     });
