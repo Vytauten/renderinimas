@@ -56,7 +56,7 @@ const DaiktasDetails = ({ daiktas }) => {
             const fromDate = new Date(startDate).toISOString();
             const toDate = new Date(endDate).toISOString();
 
-            const response = await fetch("/api/reservations", {
+            const response = await fetch(`${API_BASE}/api/reservations`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

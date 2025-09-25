@@ -11,7 +11,7 @@ const RenewPage = () => {
 
   useEffect(() => {
     const fetchDaiktas = async () => {
-      const response = await fetch(`${API_BASE}/api/daiktai` + id, {
+      const response = await fetch(`${API_BASE}/api/daiktai${id}`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       const json = await response.json();

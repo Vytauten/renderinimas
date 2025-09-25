@@ -17,7 +17,6 @@ const Home = () => {
 
     const fetchDaiktus = async () => {
       try {
-        // Jei proxy neveiks - "http://localhost:4000/api/daiktai"
         const response = await fetch(`${API_BASE}/api/daiktai`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
