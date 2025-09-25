@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
-import { API_BASE } from "./config";
+import { API_BASE } from "../config";
 
 export const useLogin = () => {
   const [error, setError] = useState(null);
