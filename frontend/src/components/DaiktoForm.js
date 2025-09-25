@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDaiktasContext } from "../hooks/useDaiktasContext";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { API_BASE } from "./config";
 
 const DaiktoForm = () => {
   const { dispatch } = useDaiktasContext();
@@ -21,7 +22,7 @@ const DaiktoForm = () => {
       return;
     }
     const daiktas = { title, about, price, availability, age };
-    const response = await fetch("/api/daiktai", {
+    const response = await fetch(`${API_BASE}/api/daiktai`, {
       method: "POST",
       body: JSON.stringify(daiktas),
       headers: {

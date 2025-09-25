@@ -1,4 +1,5 @@
 import { useAuthContext } from "../hooks/useAuthContext";
+import { API_BASE } from "./config";
 
 const ReservationDetails = ({ reservation, onCancel }) => {
   const { user } = useAuthContext();
@@ -8,7 +9,7 @@ const ReservationDetails = ({ reservation, onCancel }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:4000/api/reservations/${reservation._id}/cancel`,
+        `${API_BASE}/api/reservations/${reservation._id}/cancel`,
         {
           method: "PATCH",
           headers: {

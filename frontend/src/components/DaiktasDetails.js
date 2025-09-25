@@ -1,13 +1,14 @@
 import { useDaiktasContext } from "../hooks/useDaiktasContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { Link } from "react-router-dom";
+import { API_BASE } from "./config";
 
 const DaiktasDetails = ({ daiktas }) => {
   const { dispatch } = useDaiktasContext();
   const { user } = useAuthContext();
 
   const handleClick = async () => {
-    const response = await fetch("/api/daiktai/" + daiktas._id, {
+    const response = await fetch(`${API_BASE}/api/daiktai` + daiktas._id, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${user.token}` },
     });

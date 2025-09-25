@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDaiktasContext } from "../hooks/useDaiktasContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useNavigate } from "react-router-dom";
+import { API_BASE } from "./config";
 
 const DaiktoFormRenew = ({ daiktas }) => {
   const { dispatch } = useDaiktasContext();
@@ -26,7 +27,7 @@ const DaiktoFormRenew = ({ daiktas }) => {
     }
 
     const payload = { title, about, price, age, availability };
-    const response = await fetch(`/api/daiktai/${daiktas._id}`, {
+    const response = await fetch(`${API_BASE}/api/daiktai/${daiktas._id}`, {
       method: "PATCH",
       body: JSON.stringify(payload),
       headers: {
