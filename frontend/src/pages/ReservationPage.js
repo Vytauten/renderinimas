@@ -2,6 +2,7 @@ import { useEffect } from "react";
 // hookas yra contexte, o ne prie hookų
 import { useReservationContext } from "../context/ReservationContext";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { API_BASE } from "../config";
 
 const ReservationsPage = () => {
   const { reservations, dispatch } = useReservationContext();
@@ -9,7 +10,7 @@ const ReservationsPage = () => {
 
   useEffect(() => {
     const fetchReservations = async () => {
-      const response = await fetch("/api/reservations", {
+      const response = await fetch(`${API_BASE}/api/reservations`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       const json = await response.json();

@@ -1,5 +1,5 @@
 import { useAuthContext } from "../hooks/useAuthContext";
-import { API_BASE } from "./config";
+import { API_BASE } from "../config";
 
 const ReservationDetails = ({ reservation, onCancel }) => {
   const { user } = useAuthContext();

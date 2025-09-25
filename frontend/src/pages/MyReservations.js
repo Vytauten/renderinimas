@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
 import ReservationDetails from "../components/ReservationDetails";
+import { API_BASE } from "../config";
 
 const MyReservations = () => {
   const { user } = useAuthContext();
@@ -11,7 +12,7 @@ const MyReservations = () => {
 
     const fetchReservations = async () => {
       try {
-        const response = await fetch("http://localhost:4000/api/reservations", {
+        const response = await fetch(`${API_BASE}/api/daiktai`, {
           headers: { Authorization: `Bearer ${user.token}` },
         });
 

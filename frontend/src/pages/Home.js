@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDaiktasContext } from "../hooks/useDaiktasContext";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { API_BASE } from "../config";
 
 // Components
 import DaiktasDetails from "../components/DaiktasDetails";
@@ -17,7 +18,7 @@ const Home = () => {
     const fetchDaiktus = async () => {
       try {
         // Jei proxy neveiks - "http://localhost:4000/api/daiktai"
-        const response = await fetch("/api/daiktai", {
+        const response = await fetch(`${API_BASE}/api/daiktai`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
             "Content-Type": "application/json",

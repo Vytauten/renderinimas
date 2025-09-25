@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import DaiktoFormRenew from "../components/DaiktoFormRenew";
+import { API_BASE } from "../config";
 
 const RenewPage = () => {
   const { id } = useParams();
@@ -10,7 +11,7 @@ const RenewPage = () => {
 
   useEffect(() => {
     const fetchDaiktas = async () => {
-      const response = await fetch("/api/daiktai/" + id, {
+      const response = await fetch(`${API_BASE}/api/daiktai` + id, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       const json = await response.json();

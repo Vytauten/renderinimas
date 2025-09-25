@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDaiktasContext } from "../hooks/useDaiktasContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useNavigate } from "react-router-dom";
-import { API_BASE } from "./config";
+import { API_BASE } from "../config";
 
 const DaiktoFormRenew = ({ daiktas }) => {
   const { dispatch } = useDaiktasContext();
